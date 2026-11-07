@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CareerJobsHub - Explore job opportunities, career guides and remote work.">
+<title>CareerJobsHub | Find Your Next Opportunity</title>
+<style>
+:root{--navy:#10243a;--blue:#1769e0;--cyan:#eaf3ff;--ink:#172536;--muted:#64748b;--line:#e5eaf1;--bg:#f6f8fc;--white:#fff;--green:#12805c}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-size:22px;font-weight:800;letter-spacing:-.6px;color:var(--navy)}.brand span{color:var(--blue)}
+nav{display:flex;gap:25px;align-items:center;font-size:14px;color:#43536a}nav a:hover{color:var(--blue)}
+.navbtn{background:var(--blue);color:#fff;padding:10px 16px;border-radius:8px;font-weight:700}
+.hero{background:linear-gradient(115deg,#10243a,#174a82);color:#fff;padding:70px 0 76px}
+.hero-inner{max-width:780px}.eyebrow{color:#b9d6ff;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px}
+h1{font-size:clamp(34px,5vw,54px);line-height:1.12;margin:12px 0 16px;letter-spacing:-1.4px}
+.hero p{color:#d7e6f8;font-size:17px;max-width:650px;margin:0 0 28px}
+.search{display:flex;background:#fff;padding:7px;border-radius:12px;gap:8px;max-width:720px;box-shadow:0 12px 35px #06182c55}
+.search input{min-width:0;flex:1;border:0;padding:13px 14px;font-size:15px;outline:none;color:#172536}
+.search button{border:0;background:var(--blue);color:#fff;padding:0 24px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer}
+.hero-note{font-size:12px!important;margin:12px 0 0!important;color:#c7d8ee!important}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:-25px;position:relative}
+.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px 20px;box-shadow:0 8px 25px #18314b0a}
+.stat strong{display:block;font-size:21px;color:var(--navy)}.stat small{color:var(--muted)}
+main{padding:42px 0 65px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:20px}
+h2{font-size:25px;color:var(--navy);margin:0}.sub{margin:5px 0 0;color:var(--muted);font-size:14px}
+.categories{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:42px}
+.cat{background:#fff;border:1px solid var(--line);border-radius:11px;padding:17px 13px;text-align:center;font-weight:700;font-size:14px;cursor:pointer;transition:.2s}
+.cat:hover,.cat.active{border-color:#8db8f5;background:var(--cyan);color:var(--blue)}
+.cat .ico{display:block;font-size:24px;margin-bottom:7px}
+.jobs{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.job{background:#fff;border:1px solid var(--line);border-radius:12px;padding:19px;display:flex;gap:15px;align-items:flex-start;transition:.2s}
+.job:hover{border-color:#a9c8f3;box-shadow:0 8px 22px #18314b0b}
+.logo{width:46px;height:46px;border-radius:10px;background:#edf4ff;color:var(--blue);display:grid;place-items:center;font-size:20px;font-weight:800;flex:none}
+.jobbody{flex:1;min-width:0}.job h3{font-size:17px;margin:0 0 3px;color:var(--navy)}.company{font-size:13px;color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}.tag{font-size:11px;background:#f1f5f9;color:#506176;padding:5px 8px;border-radius:20px}
+.jobfoot{display:flex;align-items:center;justify-content:space-between;gap:10px}.type{font-size:12px;color:var(--green);font-weight:700}
+.apply{font-size:12px;color:var(--blue);font-weight:700;border:1px solid #c9dcf7;padding:7px 11px;border-radius:7px}
+.notice{margin:16px 0 0;padding:12px 14px;border-radius:9px;background:#fff8e8;color:#795a16;font-size:12px;border:1px solid #f4e3b7}
+.empty{display:none;background:#fff;border:1px dashed #cbd5e1;border-radius:12px;padding:25px;text-align:center;color:var(--muted);grid-column:1/-1}
+.info{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;margin-top:42px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px}
+.panel h2{font-size:20px;margin-bottom:9px}.panel p{font-size:14px;color:var(--muted);margin:0}
+footer{background:var(--navy);color:#d8e4f2;padding:28px 0;font-size:13px}
+.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.foot strong{color:#fff}
+@media(max-width:760px){nav{gap:12px}nav a:not(.navbtn){display:none}.categories{grid-template-columns:repeat(2,1fr)}.jobs{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.info{grid-template-columns:1fr}.hero{padding:52px 0 62px}}
+@media(max-width:460px){.search{flex-direction:column}.search button{padding:13px}.job{padding:15px}.brand{font-size:19px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#">Career<span>Jobs</span>Hub</a>
+<nav><a href="#jobs">Latest Jobs</a><a href="#categories">Categories</a><a href="#about">About</a><a class="navbtn" href="#jobs">Find Jobs</a></nav>
+</div></header>
+<section class="hero"><div class="wrap hero-inner">
+<div class="eyebrow">Your next opportunity starts here</div>
+<h1>Find a job that moves your career forward.</h1>
+<p>Explore job opportunities, remote work and career updates from different industries and locations.</p>
+<div class="search"><input id="searchInput" type="search" placeholder="Search job title, company or location..." aria-label="Search jobs"><button id="searchBtn">Search Jobs</button></div>
+<p class="hero-note">Search the sample listings below. Replace them with verified, current vacancies before publishing.</p>
+</div></section>
+<div class="wrap stats">
+<div class="stat"><strong>New opportunities</strong><small>Explore recently added listings</small></div>
+<div class="stat"><strong>Multiple categories</strong><small>Government, private and remote</small></div>
+<div class="stat"><strong>Career resources</strong><small>Information to support your search</small></div>
+</div>
+<main class="wrap">
+<section id="categories">
+<div class="section-head"><div><h2>Browse by category</h2><p class="sub">Choose an area to explore matching listings.</p></div></div>
+<div class="categories">
+<button class="cat active" data-filter="all"><span class="ico">🌐</span>All Jobs</button>
+<button class="cat" data-filter="government"><span class="ico">🏛️</span>Government</button>
+<button class="cat" data-filter="private"><span class="ico">🏢</span>Private Jobs</button>
+<button class="cat" data-filter="remote"><span class="ico">💻</span>Remote Jobs</button>
+<button class="cat" data-filter="international"><span class="ico">✈️</span>International</button>
+</div>
+</section>
+<section id="jobs">
+<div class="section-head"><div><h2>Latest job opportunities</h2><p class="sub">Starter layout — add verified vacancies and application links.</p></div></div>
+<div class="jobs" id="jobList">
+<article class="job" data-category="private" data-search="customer support representative private pakistan"><div class="logo">CS</div><div class="jobbody"><h3>Customer Support Representative</h3><div class="company">Example listing · Pakistan</div><div class="meta"><span class="tag">Private</span><span class="tag">Full-time</span><span class="tag">Pakistan</span></div><div class="jobfoot"><span class="type">Sample post</span><a class="apply" href="#contact">Application link needed</a></div></div></article>
+<article class="job" data-category="remote" data-search="remote data entry assistant online worldwide"><div class="logo">DE</div><div class="jobbody"><h3>Remote Data Entry Assistant</h3><div class="company">Example listing · Remote</div><div class="meta"><span class="tag">Remote</span><span class="tag">Entry level</span><span class="tag">Worldwide</span></div><div class="jobfoot"><span class="type">Sample post</span><a class="apply" href="#contact">Application link needed</a></div></div></article>
+<article class="job" data-category="government" data-search="office assistant government pakistan public sector"><div class="logo">OA</div><div class="jobbody"><h3>Office Assistant</h3><div class="company">Example listing · Pakistan</div><div class="meta"><span class="tag">Government</span><span class="tag">Public sector</span><span class="tag">Pakistan</span></div><div class="jobfoot"><span class="type">Sample post</span><a class="apply" href="#contact">Application link needed</a></div></div></article>
+<article class="job" data-category="international" data-search="warehouse associate international uae gulf"><div class="logo">WA</div><div class="jobbody"><h3>Warehouse Associate</h3><div class="company">Example listing · UAE</div><div class="meta"><span class="tag">International</span><span class="tag">Full-time</span><span class="tag">UAE</span></div><div class="jobfoot"><span class="type">Sample post</span><a class="apply" href="#contact">Application link needed</a></div></div></article>
+<div class="empty" id="empty">No matching sample listings. Try another search or category.</div>
+</div>
+<div class="notice"><strong>Important:</strong> These are sample cards to demonstrate the design, not confirmed vacancies. Replace each one with a genuine job, employer details, deadline and official application URL before making it public. Never ask applicants to pay a fee for a job application.</div>
+</section>
+<section class="info" id="about">
+<div class="panel"><h2>About CareerJobsHub</h2><p>CareerJobsHub is a job-information website concept designed to help visitors explore opportunities by category and location. Add your own verified job updates and useful career guidance here.</p></div>
+<div class="panel" id="contact"><h2>Contact</h2><p>Add your official email address and contact details here so visitors can report corrections or ask questions.</p></div>
+</section>
+</main>
+<footer><div class="wrap foot"><div><strong>CareerJobsHub</strong><br>Explore opportunities. Build your future.</div><div>© <span id="year"></span> CareerJobsHub · Verify every listing before applying.</div></div></footer>
+<script>
+const cards=[...document.querySelectorAll('.job')];let active='all';
+function filterJobs(){const q=document.getElementById('searchInput').value.trim().toLowerCase();let shown=0;cards.forEach(card=>{const okCat=active==='all'||card.dataset.category===active;const okText=!q||card.dataset.search.includes(q)||card.innerText.toLowerCase().includes(q);card.style.display=okCat&&okText?'flex':'none';if(okCat&&okText)shown++;});document.getElementById('empty').style.display=shown?'none':'block';}
+document.querySelectorAll('.cat').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.cat').forEach(b=>b.classList.remove('active'));btn.classList.add('active');active=btn.dataset.filter;filterJobs();}));
+document.getElementById('searchBtn').addEventListener('click',filterJobs);document.getElementById('searchInput').addEventListener('input',filterJobs);document.getElementById('searchInput').addEventListener('keydown',e=>{if(e.key==='Enter')filterJobs();});document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body></html>
